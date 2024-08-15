@@ -20,6 +20,20 @@ describe('Teste para o componente PostComment', () => {
 
         fireEvent.click(screen.getByTestId('btn-comment'))
         expect(screen.getByText('Estudar Jest')).toBeInTheDocument()
+
+
+        
+        fireEvent.change(screen.getByTestId('comment-field'), {
+        target: {
+            value: 'Estudar JavaScript'
+        }
+        })
+
+         fireEvent.click(screen.getByTestId('btn-comment'))
+         expect(screen.getByText('Estudar JavaScript')).toBeInTheDocument()
+
         debug()
     })
+
+
 });
